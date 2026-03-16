@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
-import { DevColorEditor } from './DevColorEditor';
 
 export const Layout = ({ children }: { children: ReactNode }) => (
   <div className="min-h-screen flex flex-col">
@@ -10,6 +9,5 @@ export const Layout = ({ children }: { children: ReactNode }) => (
       {children}
     </main>
     <Footer />
-    <DevColorEditor />
   </div>
 );

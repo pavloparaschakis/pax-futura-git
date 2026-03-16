@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git -C /Users/Pavlo/Desktop/pax-futura-git remote get-url origin)"
+      "Bash(git -C /Users/Pavlo/Desktop/pax-futura-git remote get-url origin)",
+      "Bash(npm uninstall:*)"
     ]
   }
 }
