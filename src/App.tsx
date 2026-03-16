@@ -8,32 +8,23 @@ import Services from "./pages/Services.tsx";
 import WhyPrivate from "./pages/WhyPrivate.tsx";
 import About from "./pages/About.tsx";
 import NotFound from "./pages/NotFound.tsx";
-import PlasmicHost from "./PlasmicHost.tsx";
 
 const queryClient = new QueryClient();
-
-// PlasmicCanvasHost registers its own internal router — it must render
-// outside of BrowserRouter to avoid a basename conflict.
-const isPlasmicHost = window.location.pathname.endsWith('/plasmic-host');
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {isPlasmicHost ? (
-        <PlasmicHost />
-      ) : (
-        <BrowserRouter basename="/pax-futura-git">
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/regulatory-compliance" element={<WhyPrivate />} />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      )}
+      <BrowserRouter basename="/pax-futura-git">
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/regulatory-compliance" element={<WhyPrivate />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
