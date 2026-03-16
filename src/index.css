@@ -1,0 +1,194 @@
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Geist:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 2%;
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 53%;
+    --accent: 0 0% 7%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 0 0% 10%;
+    --input: 0 0% 10%;
+    --ring: 0 0% 95%;
+    --radius: 0rem;
+
+    --pax-bg: #1e1f21;
+    --pax-alt: #212122;
+    --pax-card: #1b1b1c;
+    --pax-card-hover: #494949;
+    --pax-card-elevated: #2b2d42;
+    --pax-border: #6f849f;
+    --pax-border-hover: #535354;
+    --pax-border-premium: #3f4041;
+    --pax-text: #e3e3e0;
+    --pax-text-heading: #f0f0f0;
+    --pax-text-secondary: #d3d5d7;
+    --pax-text-tertiary: #d2d3d5;
+    --pax-green: #c8ced6;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-pax-bg text-pax-text font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    color: var(--pax-text-heading);
+  }
+  .text-pax-secondary, .text-pax-tertiary {
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .heading-gradient {
+    background: linear-gradient(to right, #e3e3e0, #7e858d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .eyebrow {
+    @apply text-[11px] uppercase tracking-[0.12em] text-pax-tertiary;
+  }
+
+  .nav-blur {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(30,31,33,0.92);
+    border-bottom: 1px solid var(--pax-border);
+  }
+
+  .btn-solid {
+    @apply px-6 py-3 text-sm font-medium uppercase tracking-widest transition-all duration-150;
+    background: #e3e3e0;
+    color: #1e1f21;
+    border-radius: 0;
+  }
+  .btn-solid:hover {
+    background: #cbcbc8;
+  }
+
+  .btn-ghost {
+    @apply px-6 py-3 text-sm font-medium uppercase tracking-widest transition-all duration-150;
+    background: transparent;
+    border: 1px solid #6f849f;
+    color: #e3e3e0;
+    border-radius: 0;
+  }
+  .btn-ghost:hover {
+    border-color: #e3e3e0;
+  }
+
+  .pax-card {
+    background: var(--pax-card);
+    border: 1px solid var(--pax-border);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 150ms ease;
+    box-shadow: 0 0 80px rgba(111, 132, 159, 0.08);
+  }
+  .pax-card:hover {
+    border-color: #6f849f;
+    background: var(--pax-card-hover);
+  }
+
+  /* ── Landscape depth system ── */
+  .pax-landscape-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .pax-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      rgb(30, 31, 33) 0%,
+      rgb(30, 31, 33) 3%,
+      rgba(30, 31, 33, 0.96) 8%,
+      rgba(30, 31, 33, 0.84) 16%,
+      rgba(30, 31, 33, 0.56) 26%,
+      rgba(30, 31, 33, 0.22) 37%,
+      rgba(30, 31, 33, 0.04) 46%,
+      rgba(30, 31, 33, 0) 52%,
+      rgba(30, 31, 33, 0) 58%,
+      rgba(30, 31, 33, 0.22) 68%,
+      rgba(30, 31, 33, 0.58) 78%,
+      rgba(30, 31, 33, 0.86) 88%,
+      rgb(30, 31, 33) 96%,
+      rgb(30, 31, 33) 100%
+    );
+  }
+
+  /* 3D cube decorative element */
+  .pax-cube-decorator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    margin-top: -110px;
+    margin-bottom: -110px;
+    pointer-events: none;
+  }
+  .pax-cube-decorator img {
+    width: 500px;
+    max-width: 80vw;
+    opacity: 1;
+  }
+
+  .placeholder-highlight {
+    background: #2b2d42;
+    border: 1px solid #6f849f;
+    padding: 0 0.5rem;
+    color: #e3e3e0;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .cursor-blink {
+    animation: blink 1s infinite;
+  }
+}
