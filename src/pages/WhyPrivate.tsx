@@ -168,7 +168,7 @@ const WhyPrivate = () => {
         <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8 py-20">
           <SectionReveal>
             <h2 className="font-geist text-[30px] lg:text-[42px] leading-[1.15] tracking-[-0.02em] mb-6 border-l-[2px] border-[#6f849f] pl-4">
-              What Pax Futura Provides
+              What Pax Inovitae Provides
             </h2>
           </SectionReveal>
           <SectionReveal delay={0.1}>

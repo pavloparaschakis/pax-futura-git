@@ -30,7 +30,7 @@ export const ChatMock = () => {
           <div className="w-3 h-3 rounded-full bg-[#6f849f]" />
           <div className="w-3 h-3 rounded-full bg-[#6f849f]" />
         </div>
-        <span className="text-[14px] font-mono text-pax-tertiary uppercase tracking-widest">Pax Futura Assistant</span>
+        <span className="text-[14px] font-mono text-pax-tertiary uppercase tracking-widest">Pax Inovitae Assistant</span>
         <div className="w-14" />
       </div>
       <div className="flex h-[600px]">

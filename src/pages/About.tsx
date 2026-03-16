@@ -13,7 +13,7 @@ const About = () => {
         </SectionReveal>
         <SectionReveal delay={0.1}>
           <p className="text-pax-secondary text-base leading-[1.75] max-w-[640px] mb-16">
-            Pax Futura is a private AI infrastructure firm based in Sofia. We deploy and operate enterprise language model systems for organisations across Eastern Europe and the Middle East.
+            Pax Inovitae is a private AI infrastructure firm based in Sofia. We deploy and operate enterprise language model systems for organisations across Eastern Europe and the Middle East.
           </p>
         </SectionReveal>
 

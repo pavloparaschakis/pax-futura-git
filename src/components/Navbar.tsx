@@ -30,7 +30,7 @@ export const Navbar = () => {
       <div className="max-w-[1400px] w-full mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between">
         {/* Wordmark */}
         <Link to="/" className="font-geist font-semibold text-lg text-pax-text tracking-tight">
-          Pax Futura
+          Pax Inovitae
         </Link>
 
         {/* Desktop links */}
